@@ -1,6 +1,6 @@
 # ChatGPT-bot
 
-A Typescript wrapper for ChatGPT client apis. For learning purposes only.
+A Typescript wrapper for ChatGPT client apis. For learning purposes only. [中文教程](./README.zh.md)
 
 ![](./screenshots/demo.jpeg)
 
