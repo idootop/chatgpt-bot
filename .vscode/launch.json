@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "CurrentFile",
+      "name": "Index.ts",
       "type": "node",
       "request": "launch",
-      "args": ["${workspaceFolder}/${relativeFile}"],
+      "args": ["${workspaceFolder}/src/index.ts"],
       "runtimeArgs": [
         "-r",
         "ts-node/register",
@@ -20,10 +20,10 @@
       }
     },
     {
-      "name": "Index.ts",
+      "name": "CurrentFile",
       "type": "node",
       "request": "launch",
-      "args": ["${workspaceFolder}/src/index.ts"],
+      "args": ["${workspaceFolder}/${relativeFile}"],
       "runtimeArgs": [
         "-r",
         "ts-node/register",

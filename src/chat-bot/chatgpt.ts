@@ -7,7 +7,7 @@ interface ChatGPTConversationPos {
 }
 
 export interface ChatGPTConfig extends Partial<ChatGPTConversationPos> {
-  sessionToken: string;
+  sessionToken?: string;
   authorization?: string;
   model?: 'text-davinci-002-render';
 }
@@ -24,14 +24,14 @@ export class ChatGPT {
 
   async refreshToken(props?: { force: boolean }) {
     const { force = false } = props ?? {};
-    if (force || !this.config?.authorization) {
+    if (force || !this.config?.sessionToken||!this.config?.authorization) {
       const response = await httpRow
         .get('https://chat.openai.com/api/auth/session', {
           headers: this.headers,
         })
         .catch(() => undefined);
 
-      const newSessionCookie = response?.headers?.['set-cookie']?.find((e) =>
+      const newSessionCookie = response?.headers?.['set-cookie']?.find((e:string) =>
         e.includes('__Secure-next-auth.session-token'),
       );
 
